@@ -21,9 +21,9 @@ add_rules("plugin.vsxmake.autoupdate")
 set_policy("package.requires_lock", true)
 
 -- set configs
-set_config("skyrim_vr", true)
+set_config("skyrim_vr", false)
 set_config("skyrim_ae", false)
-set_config("skyrim_se", false)
+set_config("skyrim_se", true)
 
 -- targets
 target("destroy-orphan-hazards")
