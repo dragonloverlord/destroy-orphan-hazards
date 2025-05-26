@@ -2,7 +2,7 @@
 set_xmakever("2.8.2")
 
 -- includes
-includes("lib/commonlibsse")
+includes("lib/commonlibsse-ng")
 
 -- set project
 set_project("destroy-orphan-hazards")
@@ -21,18 +21,20 @@ add_rules("plugin.vsxmake.autoupdate")
 set_policy("package.requires_lock", true)
 
 -- set configs
+set_config("skyrim_vr", true)
+set_config("skyrim_ae", false)
 set_config("skyrim_se", true)
 
 -- targets
 target("destroy-orphan-hazards")
     -- add dependencies to target
-    add_deps("commonlibsse")
+    add_deps("commonlibsse-ng")
 
     -- add commonlibsse plugin
-    add_rules("commonlibsse.plugin", {
+    add_rules("commonlibsse-ng.plugin", {
         name = "destroy-orphan-hazards",
         author = "styyx",
-        description = "SKSE64 plugin template using CommonLibSSE"
+        description = "SKSE64 plugin template using CommonLibSSE-NG"
     })
 
     -- add src files
